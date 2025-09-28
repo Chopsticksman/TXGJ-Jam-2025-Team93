@@ -1,6 +1,7 @@
 extends Node2D
 @onready var upButton = $upButton;
 @onready var downButton = $downButton;
+@onready var dialogueBox = $Dialoguebox;
 @onready var pondBackground = $pondBackground;
 @onready var storeBackground = $storeBackground;
 #!!!Needs to be pickable for input_event to work!!!
@@ -9,6 +10,9 @@ extends Node2D
 @onready var fisher = $fisher;
 #!!!Needs to be pickable for input_event to work!!!
 @onready var backgroundNum = 0;
+@onready var talking = false;
+@onready var talker;
+@onready var justTalked = false;
 #0 = POND, 1 = STORE, 
 @onready var invList = []; #inventory list, size 10
 @onready var backgroundList = [pondBackground, storeBackground];
@@ -20,15 +24,25 @@ func _ready() -> void:
 	invList.fill(null);
 	init();
 
+func _input(event):
+	if event.is_action_pressed("click") || event.is_action_pressed("space"):
+		if (talking): #if (inDialogue), go to next dialogue or finish
+			talker.contSpeak();
+		else:
+			justTalked = false;
+		
+
 func _on_up_button_pressed() -> void:
-	print("up")
-	backgroundNum += 1;
-	init();
+	if (!talking):
+		print("up")
+		backgroundNum += 1;	
+		init();
 
 func _on_down_button_pressed() -> void:
-	print("down")
-	backgroundNum -= 1;
-	init();
+	if (!talking):
+		print("down")
+		backgroundNum -= 1;
+		init();
 	
 #Will return the first available inventory index, if all full will return -1
 func getInvNum() -> int:
@@ -38,11 +52,25 @@ func getInvNum() -> int:
 	return -1;
 	
 func addToInv(item: Node):
-	invList[getInvNum()] = item;
-		
+	if (!talking):
+		invList[getInvNum()] = item;
+
+func startTalking(NPC: Node):
+	if (!talking && !justTalked):
+		talking = true;
+		talker = NPC;
+		NPC.startSpeak();
+		init();
+	
+func stopTalking():
+	talking = false;
+	init();
+	justTalked = true;
+	
 func hideAll():
 	upButton.hide();
 	downButton.hide();
+	dialogueBox.hide();
 	pondBackground.hide();
 	storeBackground.hide();
 	fishbowl.hide();
@@ -70,4 +98,5 @@ func init():
 	else:
 		downButton.show();
 		upButton.show();
-	
+	if (talking == true):
+		dialogueBox.show();

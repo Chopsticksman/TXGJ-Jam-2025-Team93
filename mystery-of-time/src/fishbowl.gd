@@ -25,7 +25,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			collisionNode.show();
 		else:
 			if (!isHidden):
-				print("DO SOMETHING!!!!");
+				print("Inventory Item Clicked");
 			
 			
 			
