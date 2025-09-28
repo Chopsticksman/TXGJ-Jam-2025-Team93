@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce44i0ay6agsf"]
 
-[ext_resource type="Texture2D" uid="uid://b2c3fpwr8i0vy" path="res://assets/player.png" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://cxhwniif5lxan" path="res://src/item1.gd" id="1_gmfve"]
+[ext_resource type="Texture2D" uid="uid://b2c3fpwr8i0vy" path="res://assets/tempbowl.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://cxhwniif5lxan" path="res://src/fishbowl.gd" id="1_gmfve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmfve"]
 size = Vector2(16.542406, 16.542406)
 
-[node name="item1" type="CharacterBody2D"]
+[node name="fishbowl" type="CharacterBody2D"]
 scale = Vector2(0.7837521, 0.7837521)
 input_pickable = true
 script = ExtResource("1_gmfve")

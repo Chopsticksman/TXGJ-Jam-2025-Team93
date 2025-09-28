@@ -4,6 +4,10 @@ extends Node2D
 @onready var downButton = $downButton;
 @onready var pondBackground = $pondBackground;
 @onready var storeBackground = $storeBackground;
+#!!!Needs to be pickable for input_event to work!!!
+@onready var fishbowl = $fishbowl;
+@onready var fisher = $fisher;
+#!!!Needs to be pickable for input_event to work!!!
 @onready var backgroundNum = 0;
 @onready var backgroundList = [pondBackground, storeBackground];
 # Called when the node enters the scene tree for the first time.
