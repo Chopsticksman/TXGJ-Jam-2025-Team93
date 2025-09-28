@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cyd86p7cpeabf"]
+[gd_scene load_steps=17 format=3 uid="uid://cyd86p7cpeabf"]
 
 [ext_resource type="Script" uid="uid://bbvwvwy8iq4su" path="res://src/world.gd" id="1_0qwtu"]
 [ext_resource type="PackedScene" uid="uid://ce44i0ay6agsf" path="res://src/fishbowl.tscn" id="1_tp5op"]
@@ -14,24 +14,27 @@
 [ext_resource type="Texture2D" uid="uid://ckl7ec4f27php" path="res://assets/interactcursor/3.png" id="12_8kjpi"]
 [ext_resource type="Texture2D" uid="uid://bqm4btlyag3f4" path="res://assets/interactcursor/4.png" id="13_yyjdi"]
 [ext_resource type="Texture2D" uid="uid://bbyl1dxncx1gy" path="res://assets/cursor.png" id="14_5xesp"]
+[ext_resource type="Texture2D" uid="uid://cqar0qnp2yiwi" path="res://assets/items.png" id="15_a3wil"]
+[ext_resource type="PackedScene" uid="uid://bhsq4s40d0i8a" path="res://src/stopwatch.tscn" id="16_8kjpi"]
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_0qwtu")
 
 [node name="fishbowl" parent="." instance=ExtResource("1_tp5op")]
-z_index = 1
 position = Vector2(575, 325)
 
 [node name="meat" parent="." instance=ExtResource("3_36ipd")]
-z_index = 1
 position = Vector2(281, 198)
 input_pickable = true
 
 [node name="fisher" parent="." instance=ExtResource("4_t101k")]
-z_index = 1
 position = Vector2(437, 288)
 
+[node name="stopwatch" parent="." instance=ExtResource("16_8kjpi")]
+position = Vector2(97, 83)
+
 [node name="tempmap" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 position = Vector2(-188, 126)
 scale = Vector2(2.02, 2.54)
@@ -40,6 +43,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 25, 25)
 
 [node name="pondBackground" type="Sprite2D" parent="."]
+visible = false
 z_index = -10
 position = Vector2(575, 325)
 scale = Vector2(72, 41)
@@ -48,6 +52,7 @@ region_enabled = true
 region_rect = Rect2(17, 51, 16, 16)
 
 [node name="storeBackground" type="Sprite2D" parent="."]
+visible = false
 z_index = -10
 position = Vector2(575, 325)
 scale = Vector2(72, 41)
@@ -56,10 +61,12 @@ region_enabled = true
 region_rect = Rect2(17, 102, 16, 16)
 
 [node name="inventory" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(577, 613)
 texture = ExtResource("6_usxdn")
 
 [node name="upButton" type="Button" parent="."]
+visible = false
 offset_left = 415.0
 offset_right = 731.0
 offset_bottom = 84.0
@@ -68,6 +75,7 @@ text = "UP BUTTON"
 flat = true
 
 [node name="downButton" type="Button" parent="."]
+visible = false
 offset_left = 415.0
 offset_top = 488.0
 offset_right = 731.0
@@ -77,11 +85,13 @@ text = "DOWN BUTTON"
 flat = true
 
 [node name="dialogueBox" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 position = Vector2(575, 426)
 texture = ExtResource("7_jvefd")
 
 [node name="dialogue" type="RichTextLabel" parent="."]
+visible = false
 z_index = 2
 custom_minimum_size = Vector2(100, 100)
 offset_left = 30.0
@@ -92,9 +102,15 @@ text = "DIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXT
 scroll_active = false
 
 [node name="cursor" type="Node2D" parent="."]
+visible = false
 script = ExtResource("8_53egh")
 interact_anim = [ExtResource("9_njovb"), ExtResource("10_5xesp"), ExtResource("11_a3wil"), ExtResource("12_8kjpi"), ExtResource("13_yyjdi")]
 cursor = ExtResource("14_5xesp")
+
+[node name="Items" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1679, 398)
+texture = ExtResource("15_a3wil")
 
 [connection signal="pressed" from="upButton" to="." method="_on_up_button_pressed"]
 [connection signal="pressed" from="downButton" to="." method="_on_down_button_pressed"]

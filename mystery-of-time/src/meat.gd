@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var isHovered: bool = false;
 @onready var parent: Node = get_parent();
 	
-#Add var to 2 list fields and as a node in world, and to init
+#Add var to 2 list fields and as a node in world, enable pickable, connect 2 funcs on nodes, add to world
 	
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if (!isClicked):

@@ -9,6 +9,7 @@ extends Node2D
 #!!!Needs to be pickable for input_event to work!!!
 @onready var fishbowl = $fishbowl;
 @onready var meat = $meat;
+@onready var stopwatch = $stopwatch;
 @onready var fisher = $fisher;
 #!!!Needs to be pickable for input_event to work!!!
 @onready var backgroundNum = 0;
@@ -19,8 +20,8 @@ extends Node2D
 @onready var invList = []; #inventory list, size 10
 @onready var backgroundList = [pondBackground, storeBackground];
 @onready var pondList = [fishbowl, fisher];
-@onready var storeList = [meat];
-@onready var allItemList = [meat, fishbowl, fisher]
+@onready var storeList = [meat, stopwatch];
+@onready var allItemList = [meat, fishbowl, stopwatch, fisher]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

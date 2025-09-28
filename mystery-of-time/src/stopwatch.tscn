@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhsq4s40d0i8a"]
+
+[ext_resource type="Script" uid="uid://561bx1xg7y8f" path="res://src/stopwatch.gd" id="1_ew8yn"]
+[ext_resource type="Texture2D" uid="uid://cqar0qnp2yiwi" path="res://assets/items.png" id="2_oisdf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fvmy7"]
+radius = 20.09975
+
+[node name="stopwatch" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_ew8yn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_oisdf")
+region_enabled = true
+region_rect = Rect2(575, 14, 42, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fvmy7")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
