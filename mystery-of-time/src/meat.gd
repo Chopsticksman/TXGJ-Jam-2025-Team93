@@ -23,9 +23,6 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			position = newPos;
 			spriteNode.show();
 			collisionNode.show();
-		else:
-			if (!isHidden):
-				print("DO SOMETHING!!!!");
 			
 			
 			

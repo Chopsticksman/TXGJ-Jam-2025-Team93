@@ -1,17 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyd86p7cpeabf"]
+[gd_scene load_steps=7 format=3 uid="uid://cyd86p7cpeabf"]
 
 [ext_resource type="Script" uid="uid://bbvwvwy8iq4su" path="res://src/world.gd" id="1_0qwtu"]
 [ext_resource type="PackedScene" uid="uid://ce44i0ay6agsf" path="res://src/fishbowl.tscn" id="1_tp5op"]
 [ext_resource type="Texture2D" uid="uid://bcqlfbxxl8bhy" path="res://assets/tilemap.png" id="2_xlegt"]
+[ext_resource type="PackedScene" uid="uid://1tjvkbtajm6i" path="res://src/meat.tscn" id="3_36ipd"]
 [ext_resource type="PackedScene" uid="uid://8cdd8jumy0vm" path="res://src/fisher.tscn" id="4_t101k"]
+[ext_resource type="Texture2D" uid="uid://bd3u8ewtmsu6t" path="res://assets/inventory.png" id="6_usxdn"]
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_0qwtu")
 
 [node name="fishbowl" parent="." instance=ExtResource("1_tp5op")]
+z_index = 1
 position = Vector2(575, 325)
 
-[node name="Tilemap" type="Sprite2D" parent="."]
+[node name="meat" parent="." instance=ExtResource("3_36ipd")]
+z_index = 1
+position = Vector2(281, 198)
+input_pickable = true
+
+[node name="fisher" parent="." instance=ExtResource("4_t101k")]
+z_index = 1
+position = Vector2(437, 288)
+
+[node name="tempmap" type="Sprite2D" parent="."]
 visible = false
 z_index = 1
 position = Vector2(-188, 126)
@@ -21,8 +33,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 25, 25)
 
 [node name="pondBackground" type="Sprite2D" parent="."]
-visible = false
-z_index = -1
+z_index = -10
 position = Vector2(575, 325)
 scale = Vector2(72, 41)
 texture = ExtResource("2_xlegt")
@@ -30,13 +41,16 @@ region_enabled = true
 region_rect = Rect2(17, 51, 16, 16)
 
 [node name="storeBackground" type="Sprite2D" parent="."]
-visible = false
-z_index = -2
+z_index = -10
 position = Vector2(575, 325)
 scale = Vector2(72, 41)
 texture = ExtResource("2_xlegt")
 region_enabled = true
 region_rect = Rect2(17, 102, 16, 16)
+
+[node name="Inventory" type="Sprite2D" parent="."]
+position = Vector2(577, 613)
+texture = ExtResource("6_usxdn")
 
 [node name="upButton" type="Button" parent="."]
 offset_left = 415.0
@@ -48,16 +62,12 @@ flat = true
 
 [node name="downButton" type="Button" parent="."]
 offset_left = 415.0
-offset_top = 568.0
+offset_top = 488.0
 offset_right = 731.0
-offset_bottom = 652.0
+offset_bottom = 572.0
 action_mode = 0
 text = "DOWN BUTTON"
 flat = true
-
-[node name="fisher" parent="." instance=ExtResource("4_t101k")]
-position = Vector2(437, 288)
-input_pickable = true
 
 [connection signal="pressed" from="upButton" to="." method="_on_up_button_pressed"]
 [connection signal="pressed" from="downButton" to="." method="_on_down_button_pressed"]

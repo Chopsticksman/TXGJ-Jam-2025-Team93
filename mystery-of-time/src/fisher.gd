@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @onready var spriteNode = $Sprite2D
 @onready var collisionNode = $CollisionShape2D
+@onready var isHidden = false;
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	# When clicked on

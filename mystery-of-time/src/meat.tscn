@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://1tjvkbtajm6i"]
+
+[ext_resource type="Script" uid="uid://dtgwvanfx6e0f" path="res://src/meat.gd" id="1_a1vr8"]
+[ext_resource type="Texture2D" uid="uid://b2c3fpwr8i0vy" path="res://assets/placeholder.png" id="1_gq167"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1vr8"]
+size = Vector2(12.682511, 12.406805)
+
+[node name="meat" type="CharacterBody2D"]
+script = ExtResource("1_a1vr8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 0.7751684)
+scale = Vector2(2.35, 2.35)
+texture = ExtResource("1_gq167")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 5.5)
+scale = Vector2(3.6270418, 3.6270418)
+shape = SubResource("RectangleShape2D_a1vr8")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
