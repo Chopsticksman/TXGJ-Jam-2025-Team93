@@ -86,16 +86,16 @@ func hideAll():
 func init():
 	hideAll();
 	for i in range(10):
-		if (invList[i] != null):
+		if (invList[i]):
 			invList[i].show();
 	backgroundList[backgroundNum].show();
 	if (backgroundNum == 0):
 		for i in range(pondList.size()):
-			if (pondList[i].isHidden == false):
+			if (!pondList[i].isHidden):
 				pondList[i].show();
 	elif (backgroundNum == 1):
 		for i in range(storeList.size()):
-			if (storeList[i].isHidden == false):
+			if (!storeList[i].isHidden):
 				storeList[i].show();
 	if (backgroundNum == backgroundList.size() - 1):
 		downButton.show();
@@ -104,5 +104,5 @@ func init():
 	else:
 		downButton.show();
 		upButton.show();
-	if (talking == true):
+	if (talking):
 		dialogueBox.show();

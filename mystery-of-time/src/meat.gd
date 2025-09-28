@@ -10,7 +10,7 @@ extends CharacterBody2D
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	# When clicked on
 	if event.is_action_pressed("click"):
-		if (!isClicked):
+		if (!isClicked && !parent.talking && !parent.justTalked):
 			isClicked = true;
 			var invNum = parent.getInvNum();
 			if (invNum != -1):
