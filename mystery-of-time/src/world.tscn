@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyd86p7cpeabf"]
+
+[ext_resource type="PackedScene" uid="uid://ce44i0ay6agsf" path="res://src/player.tscn" id="1_tp5op"]
+[ext_resource type="Texture2D" uid="uid://bcqlfbxxl8bhy" path="res://assets/tilemap.png" id="2_xlegt"]
+
+[node name="world" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_tp5op")]
+position = Vector2(575, 325)
+
+[node name="Tilemap" type="Sprite2D" parent="."]
+position = Vector2(-589, 623)
+texture = ExtResource("2_xlegt")
+
+[node name="Tilemap2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(575, 325)
+scale = Vector2(72, 41)
+texture = ExtResource("2_xlegt")
+region_enabled = true
+region_rect = Rect2(17, 51, 16, 16)
