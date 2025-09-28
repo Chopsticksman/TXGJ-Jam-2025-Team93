@@ -25,7 +25,9 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			collisionNode.show();
 		else:
 			if (!isHidden):
-				print("Inventory Item Clicked");
+				if (parent.talking || parent.justTalked):
+					parent.justTalked = false;
+					parent.useItem(self);
 			
 			
 			

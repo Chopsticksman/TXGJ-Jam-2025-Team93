@@ -67,6 +67,12 @@ func stopTalking():
 	init();
 	justTalked = true;
 	
+func useItem(item: Node):
+	if (talker.use(item)):
+		item.isHidden = true;
+		invList[invList.find(item)] = null;
+	init();
+	
 func hideAll():
 	upButton.hide();
 	downButton.hide();

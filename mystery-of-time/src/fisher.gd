@@ -24,3 +24,11 @@ func contSpeak():
 	else:
 		parent.stopTalking();
 	#Next dialogue option
+
+func use(item: Node) -> bool:
+	if (item == get_node("../meat")):
+		print("Om nom nom");
+		return true;
+	else:
+		return false;
+		
