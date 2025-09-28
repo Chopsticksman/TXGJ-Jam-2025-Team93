@@ -121,11 +121,3 @@ func init():
 		upButton.show();
 	if (talking):
 		dialogueBox.show();
-
-
-func _on_shell_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	pass # Replace with function body.
-
-
-func _on_shell_mouse_exited() -> void:
-	pass # Replace with function body.
