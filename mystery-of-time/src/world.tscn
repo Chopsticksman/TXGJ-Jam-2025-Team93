@@ -37,10 +37,21 @@ region_rect = Rect2(17, 102, 16, 16)
 [node name="fisher" type="CharacterBody2D" parent="."]
 
 [node name="upButton" type="Button" parent="."]
-offset_left = 417.0
-offset_top = -2.0
-offset_right = 733.0
-offset_bottom = 82.0
+offset_left = 415.0
+offset_right = 731.0
+offset_bottom = 84.0
 action_mode = 0
+text = "UP BUTTON"
+flat = true
+
+[node name="downButton" type="Button" parent="."]
+offset_left = 415.0
+offset_top = 568.0
+offset_right = 731.0
+offset_bottom = 652.0
+action_mode = 0
+text = "DOWN BUTTON"
+flat = true
 
 [connection signal="pressed" from="upButton" to="." method="_on_up_button_pressed"]
+[connection signal="pressed" from="downButton" to="." method="_on_down_button_pressed"]
