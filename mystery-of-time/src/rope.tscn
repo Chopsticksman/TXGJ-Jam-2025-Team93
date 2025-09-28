@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcjjcftdn3bxn"]
+
+[ext_resource type="Texture2D" uid="uid://cqar0qnp2yiwi" path="res://assets/items.png" id="1_0756u"]
+[ext_resource type="Script" uid="uid://dcyiftdwwafvy" path="res://src/rope.gd" id="1_nmccy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nmccy"]
+radius = 24.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_nmccy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -2)
+shape = SubResource("CircleShape2D_nmccy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0756u")
+region_enabled = true
+region_rect = Rect2(0, 5.38267, 70, 57.98537)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

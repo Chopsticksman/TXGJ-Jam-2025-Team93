@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cyd86p7cpeabf"]
+[gd_scene load_steps=20 format=3 uid="uid://cyd86p7cpeabf"]
 
 [ext_resource type="Script" uid="uid://bbvwvwy8iq4su" path="res://src/world.gd" id="1_0qwtu"]
 [ext_resource type="PackedScene" uid="uid://ce44i0ay6agsf" path="res://src/fishbowl.tscn" id="1_tp5op"]
@@ -6,7 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://1tjvkbtajm6i" path="res://src/meat.tscn" id="3_36ipd"]
 [ext_resource type="PackedScene" uid="uid://8cdd8jumy0vm" path="res://src/fisher.tscn" id="4_t101k"]
 [ext_resource type="Texture2D" uid="uid://bd3u8ewtmsu6t" path="res://assets/inventory.png" id="6_usxdn"]
+[ext_resource type="PackedScene" uid="uid://dcjjcftdn3bxn" path="res://src/rope.tscn" id="6_yyjdi"]
 [ext_resource type="Texture2D" uid="uid://cy2t5dau3mhys" path="res://assets/dialoguebox.png" id="7_jvefd"]
+[ext_resource type="PackedScene" uid="uid://b2r5wf4pja1ft" path="res://src/shell.tscn" id="7_vmuob"]
+[ext_resource type="PackedScene" uid="uid://bgjix61mbmm2m" path="res://src/money.tscn" id="8_00gdp"]
 [ext_resource type="Script" uid="uid://bx1vsnm8x6qwq" path="res://src/cursor.gd" id="8_53egh"]
 [ext_resource type="Texture2D" uid="uid://dkpnyod4dsr8i" path="res://assets/interactcursor/0.png" id="9_njovb"]
 [ext_resource type="Texture2D" uid="uid://dy7rkvikmoas4" path="res://assets/interactcursor/1.png" id="10_5xesp"]
@@ -32,6 +35,14 @@ position = Vector2(437, 288)
 
 [node name="stopwatch" parent="." instance=ExtResource("16_8kjpi")]
 position = Vector2(97, 83)
+
+[node name="rope" parent="." instance=ExtResource("6_yyjdi")]
+position = Vector2(971, 302)
+
+[node name="shell" parent="." instance=ExtResource("7_vmuob")]
+position = Vector2(156, 425)
+
+[node name="money" parent="." instance=ExtResource("8_00gdp")]
 
 [node name="tempmap" type="Sprite2D" parent="."]
 visible = false
@@ -112,5 +123,6 @@ visible = false
 position = Vector2(1679, 398)
 texture = ExtResource("15_a3wil")
 
+[connection signal="input_event" from="shell" to="shell" method="_on_shell_input_event"]
 [connection signal="pressed" from="upButton" to="." method="_on_up_button_pressed"]
 [connection signal="pressed" from="downButton" to="." method="_on_down_button_pressed"]

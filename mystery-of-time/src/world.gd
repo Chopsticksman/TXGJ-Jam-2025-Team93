@@ -11,6 +11,9 @@ extends Node2D
 @onready var meat = $meat;
 @onready var stopwatch = $stopwatch;
 @onready var fisher = $fisher;
+@onready var rope = $rope;
+@onready var shell = $shell;
+@onready var money = $money;
 #!!!Needs to be pickable for input_event to work!!!
 @onready var backgroundNum = 0;
 @onready var talking = false;
@@ -20,8 +23,8 @@ extends Node2D
 @onready var invList = []; #inventory list, size 10
 @onready var backgroundList = [pondBackground, storeBackground];
 @onready var pondList = [fishbowl, fisher];
-@onready var storeList = [meat, stopwatch];
-@onready var allItemList = [meat, fishbowl, stopwatch, fisher]
+@onready var storeList = [meat, stopwatch, rope, shell, money];
+@onready var allItemList = [meat, fishbowl, stopwatch, fisher, rope, shell, money]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -118,3 +121,11 @@ func init():
 		upButton.show();
 	if (talking):
 		dialogueBox.show();
+
+
+func _on_shell_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	pass # Replace with function body.
+
+
+func _on_shell_mouse_exited() -> void:
+	pass # Replace with function body.

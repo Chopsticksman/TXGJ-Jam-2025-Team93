@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2r5wf4pja1ft"]
+
+[ext_resource type="Script" uid="uid://duxbtwkwchsat" path="res://src/shell.gd" id="1_jqu8m"]
+[ext_resource type="Texture2D" uid="uid://cqar0qnp2yiwi" path="res://assets/items.png" id="2_kk6gx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_44cfe"]
+radius = 24.0
+
+[node name="shell" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_jqu8m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kk6gx")
+region_enabled = true
+region_rect = Rect2(633, 10, 58, 52)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 1)
+shape = SubResource("CircleShape2D_44cfe")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

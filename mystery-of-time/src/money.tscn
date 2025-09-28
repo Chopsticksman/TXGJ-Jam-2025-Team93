@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgjix61mbmm2m"]
+
+[ext_resource type="Script" uid="uid://cy5v8fxwyuehw" path="res://src/money.gd" id="1_0n1od"]
+[ext_resource type="Texture2D" uid="uid://cqar0qnp2yiwi" path="res://assets/items.png" id="1_3u73e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n1od"]
+size = Vector2(45, 42)
+
+[node name="money" type="CharacterBody2D"]
+script = ExtResource("1_0n1od")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3u73e")
+region_enabled = true
+region_rect = Rect2(216, 8, 60, 53)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_0n1od")
