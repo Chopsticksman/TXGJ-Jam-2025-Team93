@@ -1,21 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyd86p7cpeabf"]
+[gd_scene load_steps=4 format=3 uid="uid://cyd86p7cpeabf"]
 
-[ext_resource type="PackedScene" uid="uid://ce44i0ay6agsf" path="res://src/player.tscn" id="1_tp5op"]
+[ext_resource type="Script" uid="uid://bbvwvwy8iq4su" path="res://src/world.gd" id="1_0qwtu"]
+[ext_resource type="PackedScene" uid="uid://ce44i0ay6agsf" path="res://src/item1.tscn" id="1_tp5op"]
 [ext_resource type="Texture2D" uid="uid://bcqlfbxxl8bhy" path="res://assets/tilemap.png" id="2_xlegt"]
 
 [node name="world" type="Node2D"]
+script = ExtResource("1_0qwtu")
 
-[node name="player" parent="." instance=ExtResource("1_tp5op")]
+[node name="item1" parent="." instance=ExtResource("1_tp5op")]
 position = Vector2(575, 325)
 
 [node name="Tilemap" type="Sprite2D" parent="."]
-position = Vector2(-589, 623)
+z_index = 1
+position = Vector2(-188, 126)
+scale = Vector2(2.02, 2.54)
 texture = ExtResource("2_xlegt")
+region_enabled = true
+region_rect = Rect2(0, 0, 25, 25)
 
-[node name="Tilemap2" type="Sprite2D" parent="."]
+[node name="pondBackground" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(575, 325)
 scale = Vector2(72, 41)
 texture = ExtResource("2_xlegt")
 region_enabled = true
 region_rect = Rect2(17, 51, 16, 16)
+
+[node name="storeBackground" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(575, 325)
+scale = Vector2(72, 41)
+texture = ExtResource("2_xlegt")
+region_enabled = true
+region_rect = Rect2(17, 102, 16, 16)
+
+[node name="fisher" type="CharacterBody2D" parent="."]
+
+[node name="upButton" type="Button" parent="."]
+offset_left = 417.0
+offset_top = -2.0
+offset_right = 733.0
+offset_bottom = 82.0
+action_mode = 0
+
+[connection signal="pressed" from="upButton" to="." method="_on_up_button_pressed"]

@@ -1,11 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce44i0ay6agsf"]
 
 [ext_resource type="Texture2D" uid="uid://b2c3fpwr8i0vy" path="res://assets/player.png" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://cxhwniif5lxan" path="res://src/player.gd" id="1_gmfve"]
+[ext_resource type="Script" uid="uid://cxhwniif5lxan" path="res://src/item1.gd" id="1_gmfve"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmfve"]
+size = Vector2(16.542406, 16.542406)
 
-[node name="player" type="CharacterBody2D"]
+[node name="item1" type="CharacterBody2D"]
+scale = Vector2(0.7837521, 0.7837521)
 input_pickable = true
 script = ExtResource("1_gmfve")
 
@@ -14,8 +16,8 @@ scale = Vector2(2.866, 3)
 texture = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.99999994, 6.9999995)
-scale = Vector2(2.958903, 2.958903)
-shape = SubResource("CircleShape2D_onrkg")
+position = Vector2(-2.000001, 6.000001)
+scale = Vector2(3.6270418, 3.6270418)
+shape = SubResource("RectangleShape2D_gmfve")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

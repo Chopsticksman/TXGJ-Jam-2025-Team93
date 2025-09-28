@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
-var mousePos : Vector2
+@onready var spriteNode = $Sprite2D
+@onready var collisionNode = $CollisionShape2D
 
+var mousePos : Vector2
 		
 		
 		
@@ -30,6 +32,10 @@ var mousePos : Vector2
 
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	# When clicked on
 	if event.is_action_pressed("click"):
 		mousePos = get_global_mouse_position();
-		print("hi")
+		spriteNode.hide();
+		collisionNode.hide();
+			
+		
