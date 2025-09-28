@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyd86p7cpeabf"]
+[gd_scene load_steps=15 format=3 uid="uid://cyd86p7cpeabf"]
 
 [ext_resource type="Script" uid="uid://bbvwvwy8iq4su" path="res://src/world.gd" id="1_0qwtu"]
 [ext_resource type="PackedScene" uid="uid://ce44i0ay6agsf" path="res://src/fishbowl.tscn" id="1_tp5op"]
@@ -7,6 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://8cdd8jumy0vm" path="res://src/fisher.tscn" id="4_t101k"]
 [ext_resource type="Texture2D" uid="uid://bd3u8ewtmsu6t" path="res://assets/inventory.png" id="6_usxdn"]
 [ext_resource type="Texture2D" uid="uid://cy2t5dau3mhys" path="res://assets/dialoguebox.png" id="7_jvefd"]
+[ext_resource type="Script" uid="uid://bx1vsnm8x6qwq" path="res://src/cursor.gd" id="8_53egh"]
+[ext_resource type="Texture2D" uid="uid://dkpnyod4dsr8i" path="res://assets/interactcursor/0.png" id="9_njovb"]
+[ext_resource type="Texture2D" uid="uid://dy7rkvikmoas4" path="res://assets/interactcursor/1.png" id="10_5xesp"]
+[ext_resource type="Texture2D" uid="uid://c6auqgvvg83o6" path="res://assets/interactcursor/2.png" id="11_a3wil"]
+[ext_resource type="Texture2D" uid="uid://ckl7ec4f27php" path="res://assets/interactcursor/3.png" id="12_8kjpi"]
+[ext_resource type="Texture2D" uid="uid://bqm4btlyag3f4" path="res://assets/interactcursor/4.png" id="13_yyjdi"]
+[ext_resource type="Texture2D" uid="uid://bbyl1dxncx1gy" path="res://assets/cursor.png" id="14_5xesp"]
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_0qwtu")
@@ -48,7 +55,7 @@ texture = ExtResource("2_xlegt")
 region_enabled = true
 region_rect = Rect2(17, 102, 16, 16)
 
-[node name="Inventory" type="Sprite2D" parent="."]
+[node name="inventory" type="Sprite2D" parent="."]
 position = Vector2(577, 613)
 texture = ExtResource("6_usxdn")
 
@@ -69,12 +76,12 @@ action_mode = 0
 text = "DOWN BUTTON"
 flat = true
 
-[node name="Dialoguebox" type="Sprite2D" parent="."]
+[node name="dialogueBox" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(575, 426)
 texture = ExtResource("7_jvefd")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="dialogue" type="RichTextLabel" parent="."]
 z_index = 2
 custom_minimum_size = Vector2(100, 100)
 offset_left = 30.0
@@ -83,6 +90,11 @@ offset_right = 1122.0
 offset_bottom = 559.0
 text = "DIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIALOGUETEXTDIA"
 scroll_active = false
+
+[node name="cursor" type="Node2D" parent="."]
+script = ExtResource("8_53egh")
+interact_anim = [ExtResource("9_njovb"), ExtResource("10_5xesp"), ExtResource("11_a3wil"), ExtResource("12_8kjpi"), ExtResource("13_yyjdi")]
+cursor = ExtResource("14_5xesp")
 
 [connection signal="pressed" from="upButton" to="." method="_on_up_button_pressed"]
 [connection signal="pressed" from="downButton" to="." method="_on_down_button_pressed"]

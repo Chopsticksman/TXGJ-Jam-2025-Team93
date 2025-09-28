@@ -1,9 +1,11 @@
 extends Node2D
 @onready var upButton = $upButton;
 @onready var downButton = $downButton;
-@onready var dialogueBox = $Dialoguebox;
+@onready var dialogueBox = $dialogueBox;
+@onready var dialogue = $dialogue;
 @onready var pondBackground = $pondBackground;
 @onready var storeBackground = $storeBackground;
+@onready var cursor = $cursor;
 #!!!Needs to be pickable for input_event to work!!!
 @onready var fishbowl = $fishbowl;
 @onready var meat = $meat;
@@ -18,8 +20,10 @@ extends Node2D
 @onready var backgroundList = [pondBackground, storeBackground];
 @onready var pondList = [fishbowl, fisher];
 @onready var storeList = [meat];
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	cursor.mouseMode = 0;
 	invList.resize(10);
 	invList.fill(null);
 	init();
@@ -73,10 +77,16 @@ func useItem(item: Node):
 		invList[invList.find(item)] = null;
 	init();
 	
+func getHovering() -> bool:
+	if (meat.isHovered || fishbowl.isHovered):
+		return true;
+	return false;
+	
 func hideAll():
 	upButton.hide();
 	downButton.hide();
 	dialogueBox.hide();
+	dialogue.hide();
 	pondBackground.hide();
 	storeBackground.hide();
 	fishbowl.hide();

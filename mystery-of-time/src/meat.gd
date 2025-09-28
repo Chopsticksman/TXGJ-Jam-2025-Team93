@@ -1,13 +1,16 @@
 extends CharacterBody2D
 #Fishbowl Item Interactable
 
-@onready var spriteNode = $Sprite2D
-@onready var collisionNode = $CollisionShape2D
-@onready var isHidden = false;
-@onready var isClicked = false;
-@onready var parent = get_parent();
-
+@onready var spriteNode:Node = $Sprite2D
+@onready var collisionNode:Node = $CollisionShape2D
+@onready var isHidden: bool = false;
+@onready var isClicked: bool = false;
+@onready var isHovered: bool = false;
+@onready var parent: Node = get_parent();
+	
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if (!isClicked):
+		isHovered = true;
 	# When clicked on
 	if event.is_action_pressed("click"):
 		if (!isClicked && !parent.talking && !parent.justTalked):
@@ -29,6 +32,5 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 					parent.justTalked = false;
 					parent.useItem(self);
 			
-			
-			
-		
+func _on_mouse_exited() -> void:
+	isHovered = false;
