@@ -8,6 +8,8 @@ extends CharacterBody2D
 @onready var isHovered: bool = false;
 @onready var parent: Node = get_parent();
 	
+#Add var to 2 list fields and as a node in world, and to init
+	
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if (!isClicked):
 		isHovered = true;

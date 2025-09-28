@@ -20,6 +20,7 @@ extends Node2D
 @onready var backgroundList = [pondBackground, storeBackground];
 @onready var pondList = [fishbowl, fisher];
 @onready var storeList = [meat];
+@onready var allItemList = [meat, fishbowl, fisher]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -78,8 +79,9 @@ func useItem(item: Node):
 	init();
 	
 func getHovering() -> bool:
-	if (meat.isHovered || fishbowl.isHovered):
-		return true;
+	for i in range(allItemList.size()):
+		if (allItemList[i].isHovered):
+			return true;
 	return false;
 	
 func hideAll():
@@ -87,11 +89,10 @@ func hideAll():
 	downButton.hide();
 	dialogueBox.hide();
 	dialogue.hide();
-	pondBackground.hide();
-	storeBackground.hide();
-	fishbowl.hide();
-	meat.hide();
-	fisher.hide();
+	for i in range(backgroundList.size()):
+		backgroundList[i].hide();
+	for i in range(allItemList.size()):
+		allItemList[i].hide();
 	
 func init():
 	hideAll();

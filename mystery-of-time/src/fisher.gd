@@ -4,15 +4,19 @@ extends CharacterBody2D
 @onready var spriteNode = $Sprite2D
 @onready var collisionNode = $CollisionShape2D
 @onready var isHidden = false;
+@onready var isHovered = false;
 @onready var talkCount = 0;
 @onready var parent = get_parent();
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if (talkCount == 0):
+		isHovered = true;
 	# When clicked on
 	if event.is_action_pressed("click"):
 		parent.startTalking(self);
 			
 func startSpeak():
+	isHovered = false;
 	talkCount = 1;
 	print("Howdy");
 	#Start
@@ -23,6 +27,7 @@ func contSpeak():
 		talkCount += 1;
 	else:
 		parent.stopTalking();
+		talkCount = 0;
 	#Next dialogue option
 
 func use(item: Node) -> bool:
@@ -32,3 +37,6 @@ func use(item: Node) -> bool:
 	else:
 		return false;
 		
+
+func _on_mouse_exited() -> void:
+	isHovered = false;
