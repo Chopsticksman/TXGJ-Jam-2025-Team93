@@ -37,12 +37,12 @@ extends Node2D
 #centerBackground, culturalsiteBackground
 ];
 @onready var pondList = [fishbowl, fisher];
-@onready var storeList = [meat, stopwatch, shell, money,
+@onready var storeList = [meat, stopwatch, money,
 #<<<<<<< HEAD
  photograph, hammer, shovel, amulet];
-@onready var houseList = [rope];
-#@onready var centerList = [ ];
-#@onready var culturalsiteList = [];
+@onready var houseList = [rope, shell];
+#@onready var centerList = [hammer, money ];
+#@onready var culturalsiteList = [stopwatch ];
 @onready var allItemList = [meat, fishbowl, stopwatch, fisher,
 #=======
  photograph, hammer, shovel, amulet, cow]
