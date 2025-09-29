@@ -10,8 +10,8 @@ extends Node2D
 @onready var pondBackground = $pondBackground;
 @onready var storeBackground = $storeBackground;
 @onready var houseBackground = $houseBackground;
-#@onready var centerBackground = $centerBackground;
-#@onready var culturalsiteBackground = $culturalsiteBackground;
+@onready var centerBackground = $centerBackground;
+@onready var culturalsiteBackground = $culturalsiteBackground;
 @onready var cursor = $cursor;
 #!!!Needs to be pickable for input_event to work!!!
 @onready var fishbowl = $fishbowl;
@@ -33,15 +33,14 @@ extends Node2D
 @onready var justTalked = false;
 #0 = POND, 1 = STORE, 
 @onready var invList = []; #inventory list, size 10
-@onready var backgroundList = [pondBackground, storeBackground, houseBackground
-#centerBackground, culturalsiteBackground
-];
+@onready var backgroundList = [pondBackground, storeBackground, houseBackground,
+centerBackground, culturalsiteBackground];
 @onready var pondList = [fishbowl, fisher];
-@onready var storeList = [meat, stopwatch, money,
+@onready var storeList = [meat, 
  photograph, hammer, shovel, amulet];
 @onready var houseList = [rope, shell];
-#@onready var centerList = [hammer, money ];
-#@onready var culturalsiteList = [stopwatch ];
+@onready var centerList = [hammer, money];
+@onready var culturalsiteList = [stopwatch];
 @onready var allItemList = [meat, fishbowl, stopwatch, fisher,
  photograph, hammer, shovel, amulet, cow]
 #@onready var allItemList = [meat, fishbowl, stopwatch, fisher, cow,
@@ -141,14 +140,14 @@ func init():
 		for i in range(houseList.size()):
 			if (!houseList[i].isHidden):
 				houseList[i].show();
-	#elif  (backgroundNum == 3):
-		#for i in range(centerList.size()):
-		#	if (!centerList[i].isHidden):
-		#		centerList[i].show();
-	#elif  (backgroundNum == 4):
-		#for i in range(culturalsiteList.size()):
-		#	if (!culturalsiteList[i].isHidden):
-		#		culturalsiteList[i].show();
+	elif  (backgroundNum == 3):
+		for i in range(centerList.size()):
+			if (!centerList[i].isHidden):
+				centerList[i].show();
+	elif  (backgroundNum == 4):
+		for i in range(culturalsiteList.size()):
+			if (!culturalsiteList[i].isHidden):
+				culturalsiteList[i].show();
 	if (backgroundNum == backgroundList.size() - 1):
 		downButton.show();
 	elif (backgroundNum == 0):
