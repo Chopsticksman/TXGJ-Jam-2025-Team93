@@ -37,14 +37,14 @@ extends Node2D
 centerBackground, culturalsiteBackground];
 @onready var pondList = [fishbowl, fisher];
 @onready var storeList = [meat, 
- photograph, hammer, shovel, amulet];
-@onready var houseList = [rope, shell];
+  hammer, shovel, amulet, cow];
+@onready var houseList = [rope, shell, photograph];
 @onready var centerList = [hammer, money];
 @onready var culturalsiteList = [stopwatch];
-@onready var allItemList = [meat, fishbowl, stopwatch, fisher,
- photograph, hammer, shovel, amulet, cow]
-#@onready var allItemList = [meat, fishbowl, stopwatch, fisher, cow,
- #rope, shell, money, photograph, amulet, hammer, shovel];
+#@onready var allItemList = [meat, fishbowl, stopwatch, fisher,
+ #photograph, hammer, shovel, amulet, cow]
+@onready var allItemList = [meat, fishbowl, stopwatch, fisher, cow,
+ rope, shell, money, photograph, amulet, hammer, shovel];
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
