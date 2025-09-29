@@ -60,6 +60,7 @@ input_pickable = true
 
 [node name="hammer" parent="." instance=ExtResource("11_pk3eh")]
 position = Vector2(293, 407)
+input_pickable = true
 
 [node name="shovel" parent="." instance=ExtResource("12_tvnmn")]
 position = Vector2(376, 216)
