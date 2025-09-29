@@ -3,6 +3,10 @@ extends Node2D
 @onready var downButton = $downButton;
 @onready var dialogueBox = $dialogueBox;
 @onready var dialogue = $dialogue;
+@onready var choice1 = $choice1;
+@onready var choice2 = $choice2;
+@onready var choice3 = $choice3;
+@onready var choice4 = $choice4;
 @onready var pondBackground = $pondBackground;
 @onready var storeBackground = $storeBackground;
 @onready var houseBackground = $houseBackground;
@@ -12,6 +16,7 @@ extends Node2D
 @onready var meat = $meat;
 @onready var stopwatch = $stopwatch;
 @onready var fisher = $fisher;
+@onready var cow = $cow;
 @onready var rope = $rope;
 @onready var shell = $shell;
 @onready var money = $money;
@@ -28,11 +33,16 @@ extends Node2D
 @onready var invList = []; #inventory list, size 10
 @onready var backgroundList = [pondBackground, storeBackground, houseBackground];
 @onready var pondList = [fishbowl, fisher];
-@onready var storeList = [meat, stopwatch, rope, shell, money,
- photograph, hammer, shovel, amulet]
-@onready var houseList = [];
+@onready var storeList = [meat, stopwatch, shell, money,
+#<<<<<<< HEAD
+ photograph, hammer, shovel, amulet];
+@onready var houseList = [rope];
 @onready var allItemList = [meat, fishbowl, stopwatch, fisher,
- rope, shell, money, photograph, amulet, hammer, shovel]
+#=======
+ photograph, hammer, shovel, amulet, cow]
+#@onready var allItemList = [meat, fishbowl, stopwatch, fisher, cow,
+#>>>>>>> ab227e109f333b19b0e7865f3f9bea7ef6b058cf
+ #rope, shell, money, photograph, amulet, hammer, shovel];
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -101,6 +111,10 @@ func hideAll():
 	downButton.hide();
 	dialogueBox.hide();
 	dialogue.hide();
+	choice1.hide();
+	choice2.hide();
+	choice3.hide();
+	choice4.hide();
 	for i in range(backgroundList.size()):
 		backgroundList[i].hide();
 	for i in range(allItemList.size()):
