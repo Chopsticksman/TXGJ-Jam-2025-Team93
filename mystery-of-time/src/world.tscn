@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cyd86p7cpeabf"]
+[gd_scene load_steps=29 format=3 uid="uid://cyd86p7cpeabf"]
 
 [ext_resource type="Script" uid="uid://bbvwvwy8iq4su" path="res://src/world.gd" id="1_0qwtu"]
 [ext_resource type="PackedScene" uid="uid://ce44i0ay6agsf" path="res://src/fishbowl.tscn" id="1_tp5op"]
@@ -22,8 +22,11 @@
 [ext_resource type="PackedScene" uid="uid://coomn1s8vkwbk" path="res://src/cow.tscn" id="13_m5hut"]
 [ext_resource type="Texture2D" uid="uid://bqm4btlyag3f4" path="res://assets/interactcursor/4.png" id="13_yyjdi"]
 [ext_resource type="Texture2D" uid="uid://bbyl1dxncx1gy" path="res://assets/cursor.png" id="14_5xesp"]
+[ext_resource type="Texture2D" uid="uid://bjtmps5bnfnlo" path="res://assets/leavingthehourglass.png" id="15_7igba"]
 [ext_resource type="Texture2D" uid="uid://cqar0qnp2yiwi" path="res://assets/items.png" id="15_a3wil"]
+[ext_resource type="Texture2D" uid="uid://7kemird6vbic" path="res://assets/badendalt2.png" id="15_ngmlu"]
 [ext_resource type="PackedScene" uid="uid://bhsq4s40d0i8a" path="res://src/stopwatch.tscn" id="16_8kjpi"]
+[ext_resource type="Texture2D" uid="uid://cf8akk553c2f" path="res://assets/badendalt1.png" id="17_esudu"]
 [ext_resource type="Texture2D" uid="uid://cpr5y6bwycvci" path="res://assets/altdialoguebox.png" id="25_7igba"]
 
 [node name="world" type="Node2D"]
@@ -93,22 +96,20 @@ region_rect = Rect2(17, 51, 16, 16)
 [node name="storeBackground" type="Sprite2D" parent="."]
 visible = false
 z_index = -10
-position = Vector2(575, 325)
-scale = Vector2(72, 41)
-texture = ExtResource("2_xlegt")
+position = Vector2(-385.0039, -1018.999)
+scale = Vector2(27.533333, 16.94074)
+texture = ExtResource("15_ngmlu")
 region_enabled = true
-region_rect = Rect2(17, 102, 16, 16)
+region_rect = Rect2(0, 0, 1920, 1080)
 
 [node name="houseBackground" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(575, 325)
-scale = Vector2(72, 41)
-texture = ExtResource("2_xlegt")
+position = Vector2(573.8441, 322.60153)
+scale = Vector2(0.6014038, 0.60503554)
+texture = ExtResource("15_7igba")
 region_enabled = true
-region_rect = Rect2(85, 68, 16, 16)
+region_rect = Rect2(2, 1, 1915, 1073)
 
 [node name="centerBackground" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(575, 325)
 scale = Vector2(72, 41)
 texture = ExtResource("2_xlegt")
@@ -117,11 +118,11 @@ region_rect = Rect2(187, 51, 16, 16)
 
 [node name="culturalsiteBackground" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(575, 325)
-scale = Vector2(72, 41)
-texture = ExtResource("2_xlegt")
+position = Vector2(577.5, 324.75003)
+scale = Vector2(0.5973959, 0.5995371)
+texture = ExtResource("17_esudu")
 region_enabled = true
-region_rect = Rect2(238, 170, 16, 16)
+region_rect = Rect2(0, 0, 1920, 1080)
 
 [node name="inventory" type="Sprite2D" parent="."]
 z_index = -1
