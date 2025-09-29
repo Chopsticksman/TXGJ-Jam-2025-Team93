@@ -127,3 +127,4 @@ func init():
 		upButton.show();
 	if (talking):
 		dialogueBox.show();
+		dialogue.show();
