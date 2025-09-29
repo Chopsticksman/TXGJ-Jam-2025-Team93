@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://coomn1s8vkwbk"]
+
+[ext_resource type="Script" uid="uid://c8omo8cyei0d4" path="res://cow.gd" id="1_ryakq"]
+[ext_resource type="Texture2D" uid="uid://o1sq4eu1e52k" path="res://assets/businessman.png" id="2_kq5ow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yutvv"]
+size = Vector2(56, 88)
+
+[node name="cow" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_ryakq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 20)
+shape = SubResource("RectangleShape2D_yutvv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_kq5ow")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -2,7 +2,7 @@ extends Node2D
 
 @export var interact_anim: Array;
 @export var cursor: Texture2D;
-@export var frameDelay: float = 0.2;
+@export var frameDelay: float = 0.1;
 @onready var parent:Node = get_parent();
 #0 = normal, 1 = interactive
 @onready var mouseMode := 0;

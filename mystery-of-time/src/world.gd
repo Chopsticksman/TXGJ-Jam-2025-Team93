@@ -3,6 +3,10 @@ extends Node2D
 @onready var downButton = $downButton;
 @onready var dialogueBox = $dialogueBox;
 @onready var dialogue = $dialogue;
+@onready var choice1 = $choice1;
+@onready var choice2 = $choice2;
+@onready var choice3 = $choice3;
+@onready var choice4 = $choice4;
 @onready var pondBackground = $pondBackground;
 @onready var storeBackground = $storeBackground;
 @onready var cursor = $cursor;
@@ -11,6 +15,7 @@ extends Node2D
 @onready var meat = $meat;
 @onready var stopwatch = $stopwatch;
 @onready var fisher = $fisher;
+@onready var cow = $cow;
 @onready var rope = $rope;
 @onready var shell = $shell;
 @onready var money = $money;
@@ -28,8 +33,8 @@ extends Node2D
 @onready var backgroundList = [pondBackground, storeBackground];
 @onready var pondList = [fishbowl, fisher];
 @onready var storeList = [meat, stopwatch, rope, shell, money,
- photograph, hammer, shovel, amulet]
-@onready var allItemList = [meat, fishbowl, stopwatch, fisher,
+ photograph, hammer, shovel, amulet, cow]
+@onready var allItemList = [meat, fishbowl, stopwatch, fisher, cow,
  rope, shell, money, photograph, amulet, hammer, shovel]
 
 # Called when the node enters the scene tree for the first time.
@@ -99,6 +104,10 @@ func hideAll():
 	downButton.hide();
 	dialogueBox.hide();
 	dialogue.hide();
+	choice1.hide();
+	choice2.hide();
+	choice3.hide();
+	choice4.hide();
 	for i in range(backgroundList.size()):
 		backgroundList[i].hide();
 	for i in range(allItemList.size()):
