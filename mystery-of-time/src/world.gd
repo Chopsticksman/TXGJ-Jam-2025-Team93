@@ -120,12 +120,12 @@ func init():
 		for i in range(storeList.size()):
 			if (!storeList[i].isHidden):
 				storeList[i].show();
-	else (backgroundNum == 2):
+	elif  (backgroundNum == 2):
 		for i in range(houseList.size()):
 			if (!houseList[i].isHidden):
 				houseList[i].show();
 	if (backgroundNum == backgroundList.size() - 1):
-		upButton.show();
+		downButton.show();
 	elif (backgroundNum == 0):
 		upButton.show();
 	else:
