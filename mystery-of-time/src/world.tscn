@@ -6,19 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://1tjvkbtajm6i" path="res://src/meat.tscn" id="3_36ipd"]
 [ext_resource type="PackedScene" uid="uid://8cdd8jumy0vm" path="res://src/fisher.tscn" id="4_t101k"]
 [ext_resource type="Texture2D" uid="uid://bd3u8ewtmsu6t" path="res://assets/inventory.png" id="6_usxdn"]
-[ext_resource type="PackedScene" path="res://src/rope.tscn" id="6_yyjdi"]
+[ext_resource type="PackedScene" uid="uid://dcjjcftdn3bxn" path="res://src/rope.tscn" id="6_yyjdi"]
 [ext_resource type="Texture2D" uid="uid://cy2t5dau3mhys" path="res://assets/dialoguebox.png" id="7_jvefd"]
-[ext_resource type="PackedScene" path="res://src/shell.tscn" id="7_vmuob"]
-[ext_resource type="PackedScene" path="res://src/money.tscn" id="8_00gdp"]
+[ext_resource type="PackedScene" uid="uid://b2r5wf4pja1ft" path="res://src/shell.tscn" id="7_vmuob"]
+[ext_resource type="PackedScene" uid="uid://bgjix61mbmm2m" path="res://src/money.tscn" id="8_00gdp"]
 [ext_resource type="Script" uid="uid://bx1vsnm8x6qwq" path="res://src/cursor.gd" id="8_53egh"]
 [ext_resource type="Texture2D" uid="uid://dkpnyod4dsr8i" path="res://assets/interactcursor/0.png" id="9_njovb"]
-[ext_resource type="PackedScene" path="res://src/photograph.tscn" id="9_th6lv"]
+[ext_resource type="PackedScene" uid="uid://dmbqx20km1p3v" path="res://src/photograph.tscn" id="9_th6lv"]
 [ext_resource type="Texture2D" uid="uid://dy7rkvikmoas4" path="res://assets/interactcursor/1.png" id="10_5xesp"]
-[ext_resource type="PackedScene" path="res://src/amulet.tscn" id="10_wgoqa"]
+[ext_resource type="PackedScene" uid="uid://bcl1lapq1q5h0" path="res://src/amulet.tscn" id="10_wgoqa"]
 [ext_resource type="Texture2D" uid="uid://c6auqgvvg83o6" path="res://assets/interactcursor/2.png" id="11_a3wil"]
-[ext_resource type="PackedScene" path="res://src/hammer.tscn" id="11_pk3eh"]
+[ext_resource type="PackedScene" uid="uid://bnwcg24adhs35" path="res://src/hammer.tscn" id="11_pk3eh"]
 [ext_resource type="Texture2D" uid="uid://ckl7ec4f27php" path="res://assets/interactcursor/3.png" id="12_8kjpi"]
-[ext_resource type="PackedScene" path="res://src/shovel.tscn" id="12_tvnmn"]
+[ext_resource type="PackedScene" uid="uid://c72nqqx73rcbx" path="res://src/shovel.tscn" id="12_tvnmn"]
 [ext_resource type="Texture2D" uid="uid://bqm4btlyag3f4" path="res://assets/interactcursor/4.png" id="13_yyjdi"]
 [ext_resource type="Texture2D" uid="uid://bbyl1dxncx1gy" path="res://assets/cursor.png" id="14_5xesp"]
 [ext_resource type="Texture2D" uid="uid://cqar0qnp2yiwi" path="res://assets/items.png" id="15_a3wil"]
@@ -74,6 +74,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 25, 25)
 
 [node name="pondBackground" type="Sprite2D" parent="."]
+visible = false
 z_index = -10
 position = Vector2(575, 325)
 scale = Vector2(72, 41)
@@ -82,12 +83,20 @@ region_enabled = true
 region_rect = Rect2(17, 51, 16, 16)
 
 [node name="storeBackground" type="Sprite2D" parent="."]
+visible = false
 z_index = -10
 position = Vector2(575, 325)
 scale = Vector2(72, 41)
 texture = ExtResource("2_xlegt")
 region_enabled = true
 region_rect = Rect2(17, 102, 16, 16)
+
+[node name="houseBackground" type="Sprite2D" parent="."]
+position = Vector2(575, 325)
+scale = Vector2(72, 41)
+texture = ExtResource("2_xlegt")
+region_enabled = true
+region_rect = Rect2(85, 68, 16, 16)
 
 [node name="inventory" type="Sprite2D" parent="."]
 z_index = -1

@@ -5,6 +5,7 @@ extends Node2D
 @onready var dialogue = $dialogue;
 @onready var pondBackground = $pondBackground;
 @onready var storeBackground = $storeBackground;
+@onready var houseBackground = $houseBackground;
 @onready var cursor = $cursor;
 #!!!Needs to be pickable for input_event to work!!!
 @onready var fishbowl = $fishbowl;
@@ -25,10 +26,11 @@ extends Node2D
 @onready var justTalked = false;
 #0 = POND, 1 = STORE, 
 @onready var invList = []; #inventory list, size 10
-@onready var backgroundList = [pondBackground, storeBackground];
+@onready var backgroundList = [pondBackground, storeBackground, houseBackground];
 @onready var pondList = [fishbowl, fisher];
 @onready var storeList = [meat, stopwatch, rope, shell, money,
  photograph, hammer, shovel, amulet]
+@onready var houseList = [];
 @onready var allItemList = [meat, fishbowl, stopwatch, fisher,
  rope, shell, money, photograph, amulet, hammer, shovel]
 
@@ -118,8 +120,12 @@ func init():
 		for i in range(storeList.size()):
 			if (!storeList[i].isHidden):
 				storeList[i].show();
+	else (backgroundNum == 2):
+		for i in range(houseList.size()):
+			if (!houseList[i].isHidden):
+				houseList[i].show();
 	if (backgroundNum == backgroundList.size() - 1):
-		downButton.show();
+		upButton.show();
 	elif (backgroundNum == 0):
 		upButton.show();
 	else:
