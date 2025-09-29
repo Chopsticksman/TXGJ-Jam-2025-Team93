@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var collectNum: int = 0;
 @onready var parent: Node2D = get_parent();
 @onready var dialogue: RichTextLabel = get_node("../dialogue");
-@onready var dialogueLines: Array = ["Hey stranger! Need something from me?"]
+@onready var dialogueLines: Array = ["Damn, my meat's nearly spoiled. Supposed to be my lunch but I’m a vegetarian. You can have it."]
 
 func _ready():
 	pass
@@ -25,22 +25,6 @@ func startSpeak():
 	collectNum = 0;
 	isHovered = false;
 	if (parent.invList.size() >= 3):
-		for i in range(parent.invList.size()):
-			if (parent.invList[i] == get_node("../meat") || parent.invList[i] == get_node("../fishbowl") ||
-			 parent.invList[i] == get_node("../rope")):
-				collectNum += 1;
-				if (collectNum == 3):
-					dialogue.clear();
-					dialogue.add_text("Are... are you sure? It’s pretty deep, and I don’t even know what's down there. If you don’t have the proper equipment, throwing yourself into the pit would be a bad idea. You’ll need a way to breathe, an escape route, and something to distract the fish. If you don’t have those, you’re going to get hurt.");
-					talkCount += 1;
-					for j in range(parent.invList.size()):
-						if (parent.invList[j] == get_node("../meat") ||
-						 parent.invList[j] == get_node("../fishbowl") ||
-						 parent.invList[j] == get_node("../rope")):
-							parent.invList[j].isHidden = true;
-							parent.invList[j] = null;
-							
-					return;
 		dialogue.clear();
 		dialogue.add_text(dialogueLines[talkCount]);
 		talkCount += 1;
