@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c72nqqx73rcbx"]
+
+[ext_resource type="Script" uid="uid://xs36nvj6c7hv" path="res://src/shovel.gd" id="1_o0lqu"]
+[ext_resource type="Texture2D" uid="uid://cqar0qnp2yiwi" path="res://assets/items.png" id="1_tsyd2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o0lqu"]
+radius = 20.0
+height = 48.0
+
+[node name="shovel" type="CharacterBody2D"]
+script = ExtResource("1_o0lqu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tsyd2")
+region_enabled = true
+region_rect = Rect2(429, 4, 51, 65)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_o0lqu")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -15,6 +15,9 @@ extends Node2D
 @onready var shell = $shell;
 @onready var money = $money;
 @onready var photograph = $photograph;
+@onready var cracked_crystal_amulet = $cracked_crystal_amulet;
+@onready var hammer = $hammer;
+@onready var shovel = $shovel;
 #!!!Needs to be pickable for input_event to work!!!
 @onready var backgroundNum = 0;
 @onready var talking = false;
@@ -24,9 +27,10 @@ extends Node2D
 @onready var invList = []; #inventory list, size 10
 @onready var backgroundList = [pondBackground, storeBackground];
 @onready var pondList = [fishbowl, fisher];
-@onready var storeList = [meat, stopwatch, rope, shell, money, photograph];
+@onready var storeList = [meat, stopwatch, rope, shell, money,
+ photograph, hammer, shovel, cracked_crystal_amulet]
 @onready var allItemList = [meat, fishbowl, stopwatch, fisher,
- rope, shell, money, photograph]
+ rope, shell, money, photograph, cracked_crystal_amulet, hammer, shovel]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
