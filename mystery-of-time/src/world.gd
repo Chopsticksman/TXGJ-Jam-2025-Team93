@@ -38,16 +38,13 @@ extends Node2D
 ];
 @onready var pondList = [fishbowl, fisher];
 @onready var storeList = [meat, stopwatch, money,
-#<<<<<<< HEAD
  photograph, hammer, shovel, amulet];
 @onready var houseList = [rope, shell];
 #@onready var centerList = [hammer, money ];
 #@onready var culturalsiteList = [stopwatch ];
 @onready var allItemList = [meat, fishbowl, stopwatch, fisher,
-#=======
  photograph, hammer, shovel, amulet, cow]
 #@onready var allItemList = [meat, fishbowl, stopwatch, fisher, cow,
-#>>>>>>> ab227e109f333b19b0e7865f3f9bea7ef6b058cf
  #rope, shell, money, photograph, amulet, hammer, shovel];
 
 # Called when the node enters the scene tree for the first time.
